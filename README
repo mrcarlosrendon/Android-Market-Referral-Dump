@@ -1,0 +1,11 @@
+This app prints out the referral information (if any) that was provided to the Android Market for this app.
+See http://code.google.com/apis/analytics/docs/mobile/android.html#android-market-tracking for how to generate the referral information. This app's package name is com.carlos.referrer
+
+
+The main piece of functionality is in AnalyticsReciever
+
+	public void onReceive(Context context, Intent intent) {			
+		String referrer = URLDecoder.decode(intent.getStringExtra("referrer"));
+
+
+Also note that this reciever must be registered in the AndroidManifest.xml
